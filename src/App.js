@@ -1,12 +1,19 @@
 
 import './App.css';
 import Layout from "./components/UI/Layout";
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import Home from "./components/Home";
+import About from "./components/About";
 
 export default function  App(){
     return (
-
+    <Router>
         <Layout>
-            <h1>Hello World</h1>
+            <Switch>
+                <Route component ={About} path="/about" />
+                <Route component= {Home} path="/" />
+            </Switch>
         </Layout>
+    </Router>
     );
 }

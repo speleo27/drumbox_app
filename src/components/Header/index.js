@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {Link} from 'react-router-dom';
 
 export default function Header({isLight, handleToggleTheme}){
     return(
@@ -13,7 +14,6 @@ height: 80px;
 display: flex;
 justify-content: space-between;
 padding:0px 24px;
-
 align-items: center;
 border-bottom: solid 1px;`;
 
