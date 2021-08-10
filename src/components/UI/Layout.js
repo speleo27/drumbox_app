@@ -7,7 +7,7 @@ import lightTheme from "./themes/light.json";
 import darkTheme from "./themes/dark.json";
 
 import Header from 'components/Header';
-import Footer from "../Footer";
+import Footer from "components/Footer";
 
 
 export default function ({children}){

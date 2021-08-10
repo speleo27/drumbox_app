@@ -5,7 +5,31 @@ const GlobalStyle = createGlobalStyle`
             transition : linear 0.25s;
             background-color: ${(props)=>props.theme.backgroundColor};
             color:${(props )=> props.theme.mainColor};
+            font-family:Montserrat;
             }
+        button{
+        font-family:Montserrat;
+        padding : 12px 20px;
+        background-color: ${(props)=>props.theme.backgroundColor};
+        color:${(props )=> props.theme.mainColor};
+        border-radius: 10px;
+        cursor: pointer;
+        border:solid 1px;
+        transition : linear 0.25s;
+         &:hover{
+            background-color: ${(props)=>props.theme.mainColor};
+            color:${(props )=> props.theme.backgroundColor};
+            }
+        }
+        h1, h2, h3, h4, h5, h6, h7{
+        letter-spacing: 2px
+        }
+        h1{
+        font-size :1.6rem;
+        }      
+        h2{
+        font-size : 1.4rem;
+        } 
 `;
 
 
