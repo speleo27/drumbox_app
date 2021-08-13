@@ -35,11 +35,11 @@ export default function useSounds(){
     function handleKeyDown({key}){
        switch (key) {
            case "q":
-               console.log(isB4Played)
+
                isB4PlayedChange(true)
-               console.log(isB4Played)
+
                window.setTimeout(()=> isB4PlayedChange(false),300)
-               console.log(isB4Played)
+
                soundPlay("C4")
                break;
            case "z":
@@ -68,20 +68,35 @@ export default function useSounds(){
         }
     },[]);
 
+    function handleSampleChange(note, file){
+        let fileURL= URL.createObjectURL(file);
+        let buffer = new Tone.Buffer(fileURL);
+        mySampler.current.add(note, buffer, ()=> alert ("Sample successfully changed"));
+
+    }
+
     const buttonsList = [
         {soundPlay:()=>soundPlay("C4"),
             isPlayed: isB4Played,
+            id: "B4",
+            handleSampleChange: (event)=>handleSampleChange("C4", event.target.files[0])
         },
 
         {soundPlay:()=>soundPlay("D#4"),
-           isPlayed: isT15Played
+           isPlayed: isT15Played,
+            id: "TOM15",
+            handleSampleChange: (event)=>handleSampleChange("D#4", event.target.files[0])
         },
 
         {soundPlay:()=>soundPlay("F#4"),
-            isPlayed: isT5Played
+            isPlayed: isT5Played,
+            id: "TAMBOURINE5",
+            handleSampleChange: (event)=>handleSampleChange("F#4", event.target.files[0])
         },
         {soundPlay:()=>soundPlay("A4"),
             isPlayed:isR8Played,
+            id: "RIMSHOT8",
+            handleSampleChange: (event)=>handleSampleChange("A4", event.target.files[0])
         },
     ];
     return {buttonsList};
